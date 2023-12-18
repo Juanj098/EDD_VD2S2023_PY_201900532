@@ -32,6 +32,22 @@ func (l *ListD) AddAlumno(carnet int, name string) {
 	}
 }
 
+func (l *ListD) Search(user string, carnet int) *Alumnos {
+	if l.First == nil {
+		fmt.Println("lista vacia...")
+		return nil
+	} else {
+		aux := l.First
+		for aux.Next != nil {
+			if strconv.Itoa(aux.Alumno.Carnet) == user && aux.Alumno.Carnet == carnet {
+				return aux.Alumno
+			}
+			aux = aux.Next
+		}
+	}
+	return nil
+}
+
 func (l *ListD) ViewList() {
 	if l.First == nil {
 		fmt.Println("Lista vacia")
@@ -69,4 +85,49 @@ func (l *ListD) ReadCSV(path string) {
 		}
 		l.AddAlumno(carnetCSV, nameCSV)
 	}
+}
+
+func (l *ListD) ReporteG() {
+	fileName := "./LDoble.dot"
+	nameImg := "./LDoble.jpg"
+	file, err := os.Create(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+	dotContent := `
+digraph G {
+	rankdir = LR
+	node[shape=box]
+	nullFirst[shape ="point"];
+	nullLast[shape = "point"];
+`
+	arrows := ``
+	// nodos
+	if l.First == nil {
+		fmt.Println("Lista vacia")
+	} else {
+		// rev := l.Len
+		cont := 1
+		aux := l.First
+		arrows += "\tnullFirst -> nodo1[arrowhead=none]\n"
+		for aux.Next != nil {
+			dotContent += "\tnodo" + strconv.Itoa(cont) + "[label=" + strconv.Itoa(aux.Alumno.Carnet) + "];\n"
+			aux = aux.Next
+			cont++
+		}
+		dotContent += "\tnodo" + strconv.Itoa(cont) + "[label=" + strconv.Itoa(aux.Alumno.Carnet) + "];\n"
+		for i := 1; i < l.Len; i++ {
+			c := i + 1
+			arrows += "\tnodo" + strconv.Itoa(i) + " -> " + "nodo" + strconv.Itoa(c) + ";\n"
+			arrows += "\tnodo" + strconv.Itoa(c) + " -> " + "nodo" + strconv.Itoa(i) + ";\n"
+			cont = c
+		}
+		arrows += "\tnodo" + strconv.Itoa(l.Len) + "-> nullLast[arrowhead=none]\n"
+		dotContent += arrows
+	}
+	dotContent += "}"
+	crearArchivo(fileName)
+	escribirArchivo(dotContent, fileName)
+	ejecutar(nameImg, fileName)
 }

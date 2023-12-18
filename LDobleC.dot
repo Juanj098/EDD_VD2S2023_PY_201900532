@@ -1,0 +1,25 @@
+
+digraph G {
+	rankdir = LR
+	node[shape=box]
+
+	nodo0[label=202103105];
+	nodo1[label=202103206];
+	nodo2[label=202103252];
+	nodo3[label=202106003];
+	nodo4[label=202109750];
+	nodo5[label=202110180];
+	nodo0[label=202103105];
+	nodo0 ->nodo5
+	nodo0 -> nodo1;
+	nodo1 -> nodo0;
+	nodo1 -> nodo2;
+	nodo2 -> nodo1;
+	nodo2 -> nodo3;
+	nodo3 -> nodo2;
+	nodo3 -> nodo4;
+	nodo4 -> nodo3;
+	nodo4 -> nodo5;
+	nodo5 -> nodo4;
+	nodo5-> nodo0
+}

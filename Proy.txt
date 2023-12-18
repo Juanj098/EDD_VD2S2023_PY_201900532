@@ -1,2 +1,58 @@
 alumnos -> lista doble
 Tutores -> lista doble circular
+
+		("<------------[ADMIN]------------>")
+		("|1. Cargar estudiantes Tutores  |") x
+		("|2. Cargar estudiantes          |") x
+		("|3. Cargar cursos al sistema    |") -
+		("|4. Control de Tutores          |") x
+		("|5. Reportes Estructuras        |") -
+		("|6. Cerrar Sesion               |") x
+		("<------------------------------->")
+
+
+-> graphviz lista doble
+	digraph G {
+  		// Definición de nodos
+  		rankdir = LR
+  		node[shape=box]
+		//   label_scheme=1 -> a 
+		nullFirst[shape ="point" label="null" ]
+		nodo1 [label="Cuadro 1"];
+		nodo2 [label="Cuadro 2"];
+		nullLast[shape = "point"];
+		// Definición de la conexión con flecha
+		nullFirst -> nodo1[arrowhead=none] 
+		nodo3 -> nodo2 -> nodo1[arrowhead=normal]
+		nodo1 -> nodo2 -> nodo3[arrowhead=normal]
+		nodo3 -> nullLast[arrowhead=none];
+	}
+
+-> graphviz matriz
+digraph G {
+    node[shape=cluster]
+    rankdir=UD
+    {rank = min
+        nodo00[label="raiz" rankdir=LR, group="0" ]   
+        nodo01[label="1" rankdir=LR group="1"]
+        nodo02[label="2" rankdir=LR group="2"]
+    }
+    {rank =same
+        nodo10[label="1" group ="0"]
+        nodo11[label="1,1" group ="1"]
+    }
+    {rank =same
+        nodo20[label="2" group ="0"]
+    }
+    {rank =same
+        nodo30[label="3" group ="0"]
+         nodo31[label="3,1" group ="1"]
+    }
+    nodo00 -> nodo01[arrowhead=none]
+    nodo00 -> nodo10[arrowhead=none]
+    nodo01 -> nodo02[arrowhead=none]
+    nodo10 -> nodo20[arrowhead=none]
+    nodo20 -> nodo30[arrowhead=none]
+    nodo30 -> nodo31[arrowhead=none]
+    nodo11 -> nodo31[arrowhead=none]
+}

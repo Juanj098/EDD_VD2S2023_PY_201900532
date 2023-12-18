@@ -118,3 +118,46 @@ func (l *ListDC) ReadCSV(path string) {
 		l.AddTutor(nameCSV, carnetCSV, cursoCSV, promCSV)
 	}
 }
+
+func (l *ListDC) ReporteG() {
+	fileName := "./LDobleC.dot"
+	nameImg := "./LDobleC.jpg"
+	file, err := os.Create(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+	dotContent := `
+digraph G {
+	rankdir = LR
+	node[shape=box]
+
+`
+	arrows := ``
+	// nodos
+	if l.First == nil {
+		fmt.Println("Lista vacia")
+	} else {
+		// rev := l.Len
+		cont := 0
+		aux := l.First
+		arrows += "\tnodo0 ->" + "nodo" + strconv.Itoa(l.Len-1) + "\n"
+		for i := 0; i < l.Len; i++ {
+			dotContent += "\tnodo" + strconv.Itoa(i) + "[label=" + strconv.Itoa(aux.Tutor.Carnet) + "];\n"
+			aux = aux.Next
+		}
+		dotContent += "\tnodo" + strconv.Itoa(cont) + "[label=" + strconv.Itoa(aux.Tutor.Carnet) + "];\n"
+		for i := 0; i < l.Len-1; i++ {
+			c := i + 1
+			arrows += "\tnodo" + strconv.Itoa(i) + " -> " + "nodo" + strconv.Itoa(c) + ";\n"
+			arrows += "\tnodo" + strconv.Itoa(c) + " -> " + "nodo" + strconv.Itoa(i) + ";\n"
+			cont = c
+		}
+		arrows += "\tnodo" + strconv.Itoa(l.Len-1) + "-> nodo0\n"
+		dotContent += arrows
+	}
+	dotContent += "}"
+	crearArchivo(fileName)
+	escribirArchivo(dotContent, fileName)
+	ejecutar(nameImg, fileName)
+}

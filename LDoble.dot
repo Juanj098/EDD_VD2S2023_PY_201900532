@@ -1,0 +1,7 @@
+
+digraph G {
+	rankdir = LR
+	node[shape=box]
+	nullFirst[shape ="point"];
+	nullLast[shape = "point"];
+}
