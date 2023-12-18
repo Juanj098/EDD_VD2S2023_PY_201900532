@@ -86,13 +86,28 @@ func (l *ListDC) ViewListC() {
 	} else {
 		aux := l.First
 		for {
-			fmt.Println("carnet: ", aux.Tutor.Carnet, " -> ", "Tutor: ", aux.Tutor.Name)
+			fmt.Println("carnet: ", aux.Tutor.Carnet, " -> ", "Tutor: ", aux.Tutor.Name, " -> ", aux.Tutor.Curso)
 			aux = aux.Next
 			if aux == l.First {
 				break
 			}
 		}
 	}
+}
+
+func (l *ListDC) SearchTutor(codigo string) *Tutor {
+	if l.First == nil {
+		return nil
+	} else {
+		aux := l.First
+		for i := 0; i < l.Len; i++ {
+			if aux.Tutor.Curso == codigo {
+				return aux.Tutor
+			}
+			aux = aux.Next
+		}
+	}
+	return nil
 }
 
 func (l *ListDC) ReadCSV(path string) {

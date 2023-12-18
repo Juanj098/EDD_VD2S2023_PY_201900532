@@ -14,6 +14,7 @@ var listaD *structs.ListD = &structs.ListD{First: nil, Len: 0}
 var listaDC *structs.ListDC = &structs.ListDC{First: nil, Len: 0}
 var ColaPri *structs.Cola = &structs.Cola{First: nil, Len: 0}
 var matriz *structs.Matriz = &structs.Matriz{Raiz: &structs.NodoMtx{PosX: -1, PosY: -1, Dato: &structs.Data{Ctutor: 0, Cestudiante: 0, Curso: "RAIZ"}}, CantAl: 0, CantTut: 0}
+var Arbol *structs.ArbolAVL = &structs.ArbolAVL{Raiz: nil}
 
 func clearTerminal() {
 	var cmd *exec.Cmd
@@ -106,11 +107,10 @@ func MAdmin() {
 		case 2:
 			Estudiantes()
 		case 3:
-			fmt.Println("Cursos .Json")
+			Cursos()
 		case 4:
 			CTtutores()
 		case 5:
-			fmt.Println("Reportes")
 			Reportes()
 		case 6:
 			exit = true
@@ -137,14 +137,37 @@ func MStudent(user *structs.Alumnos) {
 		clearTerminal()
 		switch opcI {
 		case 1:
-			fmt.Println("Buscar")
+			fmt.Println("Informacion de Cursos")
+			listaDC.ViewListC()
 		case 2:
 			fmt.Println("Asignar")
+			var code_curso string
+			fmt.Print("Ingrese codigo de curso que desea asignar: ")
+			fmt.Scan(&code_curso)
+			Asignar(code_curso, user.Carnet)
 		case 3:
 			exit = true
 		default:
 			fmt.Println("Opcion no disponible...")
 		}
+	}
+}
+
+func Asignar(curso string, log int) {
+	if Arbol.Search(curso) {
+		tutorS := listaDC.SearchTutor(curso)
+		if tutorS != nil {
+			// student, err := strconv.Atoi(log)
+			// if err != nil {
+			// 	return
+			// }
+			matriz.AddElm(log, tutorS.Carnet, curso)
+			fmt.Println("se asigno de forma exitosa el curso!...")
+		} else {
+			fmt.Println("Curso no cuenta con tutor...")
+		}
+	} else {
+		fmt.Println("Curso no disponible")
 	}
 }
 
@@ -187,14 +210,14 @@ func Tutores() {
 	clearTerminal()
 	for !exit {
 		var opc string
-		fmt.Println("<------------------>")
-		fmt.Println("|1. cargar .csv    |")
-		fmt.Println("|2. salir          |")
-		fmt.Println("<------------------>")
+		fmt.Println("<-----{TUTORES}----->")
+		fmt.Println("|1. cargar .csv     |")
+		fmt.Println("|2. salir           |")
+		fmt.Println("<------------------->")
 		fmt.Print("-> ")
 		fmt.Scan(&opc)
 		opcI, _ := strconv.Atoi(opc)
-		fmt.Println("<------------------>")
+		fmt.Println("<------------------->")
 		clearTerminal()
 		switch opcI {
 		case 1:
@@ -216,7 +239,7 @@ func CTtutores() {
 	clearTerminal()
 	for !exit {
 		var opc string
-		fmt.Println("<--------------------------->")
+		fmt.Println("<---------{TUTORES}--------->")
 		fmt.Println("|1. Administrar solicitudes |")
 		fmt.Println("|2. aceptados               |")
 		fmt.Println("|3. salir                   |")
@@ -271,22 +294,23 @@ func Cursos() {
 	clearTerminal()
 	for !exit {
 		var opc string
-		fmt.Println("<--------------------------->")
-		fmt.Println("|1. Registrar cursos        |")
-		fmt.Println("|2. Ver cursos              |")
-		fmt.Println("|3. salir                   |")
-		fmt.Println("<--------------------------->")
+		fmt.Println("<----------{CURSOS}---------->")
+		fmt.Println("|1. Registrar cursos         |")
+		fmt.Println("|2. salir                    |")
+		fmt.Println("<---------------------------->")
 		fmt.Print("-> ")
 		fmt.Scan(&opc)
 		opcI, _ := strconv.Atoi(opc)
-		fmt.Println("<--------------------------->")
+		clearTerminal()
+		fmt.Println("<---------------------------->")
 		switch opcI {
 		case 1:
+			fmt.Println("Cursos .Json")
 			var path string
-			fmt.Print("ingrese nombre de archivo")
+			fmt.Print("Ingrese nombre de Archivo JSON: ")
 			fmt.Scan(&path)
+			Arbol.ReadJSON(path)
 		case 2:
-		case 3:
 			exit = true
 		default:
 			fmt.Println("Opcion no disponible...")
@@ -299,11 +323,12 @@ func Reportes() {
 	clearTerminal()
 	for !exit {
 		var opc string
-		fmt.Println("<--------------------------->")
+		fmt.Println("<--------{REPORTES}--------->")
 		fmt.Println("|1. Reporte Alumnos         |")
 		fmt.Println("|2. Reporte Tutores         |")
 		fmt.Println("|3. Matriz                  |")
-		fmt.Println("|4. salir                   |")
+		fmt.Println("|4. Arbol Cursos            |")
+		fmt.Println("|5. salir                   |")
 		fmt.Println("<--------------------------->")
 		fmt.Print("-> ")
 		fmt.Scan(&opc)
@@ -318,6 +343,8 @@ func Reportes() {
 		case 3:
 			matriz.ReporteG()
 		case 4:
+			Arbol.ReporteG()
+		case 5:
 			exit = true
 		default:
 			fmt.Println("Opcion no disponible...")

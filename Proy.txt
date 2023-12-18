@@ -29,9 +29,6 @@ Tutores -> lista doble circular
 	}
 
 -> graphviz matriz
-digraph G {
-    node[shape=cluster]
-    rankdir=UD
     {rank = min
         nodo00[label="raiz" rankdir=LR, group="0" ]   
         nodo01[label="1" rankdir=LR group="1"]

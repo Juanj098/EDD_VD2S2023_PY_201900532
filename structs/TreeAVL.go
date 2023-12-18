@@ -1,9 +1,25 @@
 package structs
 
-import "math"
+import (
+	"encoding/json"
+	"fmt"
+	"log"
+	"math"
+	"os"
+	"strconv"
+)
 
 type ArbolAVL struct {
 	Raiz *NodoTree
+}
+
+type Curso struct {
+	Name   string `json:"Nombre"`
+	Codigo string `json:"Codigo"`
+}
+
+type DataCurso struct {
+	Cursos []Curso `json:"cursos"`
 }
 
 func (a *ArbolAVL) Altura(raiz *NodoTree) int {
@@ -108,4 +124,82 @@ func (a *ArbolAVL) Search(curso string) bool {
 		return true
 	}
 	return false
+}
+
+func (a *ArbolAVL) ReporteG() {
+	dotContent := ""
+	fileDot := "Arbol.dot"
+	fileImg := "Arbol.jpg"
+	if a.Raiz != nil {
+		dotContent += "digraph arbol{ "
+		dotContent += a.DotContent(a.Raiz, 0)
+		dotContent += "}"
+	} else {
+		fmt.Println("Arbol sin cursos...")
+	}
+	crearArchivo(fileDot)
+	escribirArchivo(dotContent, fileDot)
+	ejecutar(fileImg, fileDot)
+}
+
+func (a *ArbolAVL) DotContent(raiz *NodoTree, indice int) string {
+	cadena := ""
+	numero := indice + 1
+	if raiz != nil {
+		cadena += "\""
+		cadena += raiz.Value
+		cadena += "\" ;"
+		if raiz.Left != nil && raiz.Right != nil {
+			cadena += " x" + strconv.Itoa(numero) + " [label=\"\",width=.1,style=invis];"
+			cadena += "\""
+			cadena += raiz.Value
+			cadena += "\" -> "
+			cadena += a.DotContent(raiz.Left, numero)
+			cadena += "\""
+			cadena += raiz.Value
+			cadena += "\" -> "
+			cadena += a.DotContent(raiz.Right, numero)
+			cadena += "{rank=same" + "\"" + (raiz.Left.Value) + "\"" + " -> " + "\"" + (raiz.Right.Value) + "\"" + " [style=invis]}; "
+		} else if raiz.Left != nil && raiz.Right == nil {
+			cadena += " x" + strconv.Itoa(numero) + " [label=\"\",width=.1,style=invis];"
+			cadena += "\""
+			cadena += raiz.Value
+			cadena += "\" -> "
+			cadena += a.DotContent(raiz.Left, numero)
+			cadena += "\""
+			cadena += raiz.Value
+			cadena += "\" -> "
+			cadena += "x" + strconv.Itoa(numero) + "[style=invis]"
+			cadena += "{rank=same" + "\"" + (raiz.Left.Value) + "\"" + " -> " + "x" + strconv.Itoa(numero) + " [style=invis]}; "
+		} else if raiz.Left == nil && raiz.Right != nil {
+			cadena += " x" + strconv.Itoa(numero) + " [label=\"\",width=.1,style=invis];"
+			cadena += "\""
+			cadena += raiz.Value
+			cadena += "\" -> "
+			cadena += "x" + strconv.Itoa(numero) + "[style=invis]"
+			cadena += "; \""
+			cadena += raiz.Value
+			cadena += "\" -> "
+			cadena += a.DotContent(raiz.Right, numero)
+			cadena += "{rank=same" + " x" + strconv.Itoa(numero) + " -> \"" + (raiz.Right.Value) + "\"" + " [style=invis]}; "
+		}
+	}
+	return cadena
+}
+
+func (a *ArbolAVL) ReadJSON(path string) {
+	js, err := os.ReadFile(path)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	var Datos DataCurso
+	errJ := json.Unmarshal(js, &Datos)
+	if errJ != nil {
+		log.Fatal(err)
+	}
+	for _, t := range Datos.Cursos {
+		a.InsertElm(t.Codigo)
+		// fmt.Println(t.Name)
+	}
 }
