@@ -161,7 +161,7 @@ digraph G {
 			dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + strconv.Itoa(aux1.Dato.Ctutor) + "\" rankdir=LR" + " group=\"" + strconv.Itoa(aux1.PosX+1) + "\"]\n"
 			aux1 = aux1.Next
 		}
-		dotContent += "}\n"
+		dotContent += "\t}\n"
 		aux2 = aux2.Down
 		for aux2 != nil {
 			aux1 = aux2
@@ -176,7 +176,7 @@ digraph G {
 				}
 				aux1 = aux1.Next
 			}
-			dotContent += "}\n"
+			dotContent += "\t}\n"
 			aux2 = aux2.Down
 		}
 		aux2 = aux3

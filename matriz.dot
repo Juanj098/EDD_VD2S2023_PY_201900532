@@ -11,10 +11,11 @@ digraph G {
 		nodo60[label="202109750" rankdir=LR group="6"]
 		nodo70[label="202110180" rankdir=LR group="7"]
 		nodo80[label="202110509" rankdir=LR group="8"]
+		nodo90[label="202110509" rankdir=LR group="9"]
 }
 	{rank=same
-		nodo02[label="202103105" group="0"]
-		nodo82[label="772" group="8"]
+		nodo03[label="202103206" group="0"]
+		nodo93[label="781" group="9"]
 }
 	nodo00 -> nodo20[arrowhead=none]
 	nodo20 -> nodo30[arrowhead=none]
@@ -23,7 +24,9 @@ digraph G {
 	nodo50 -> nodo60[arrowhead=none]
 	nodo60 -> nodo70[arrowhead=none]
 	nodo70 -> nodo80[arrowhead=none]
-	nodo02 -> nodo82[arrowhead=none]
-	nodo00 -> nodo02[arrowhead=none]
-	nodo80 -> nodo82[arrowhead=none]
+	nodo80 -> nodo90[arrowhead=none]
+	nodo03 -> nodo93[arrowhead=none]
+	nodo00 -> nodo03[arrowhead=none]
+	// nodo80 -> nodo82[arrowhead=none]
+	nodo90 -> nodo93[arrowhead=none]
 }
