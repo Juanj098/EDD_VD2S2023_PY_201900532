@@ -8,7 +8,10 @@
 
 ## Funciones Principales de la aplicacion:
 
-### Archivos de Entrada: El usuario puede proporcionnar 2 tipos de archivos con los datos necesarios. Los culales son archivos con extension ,csv y tipo.json
+### Archivos de Entrada:
+
+ El usuario puede proporcionnar 2 tipos de archivos con los datos necesarios. Los culales son archivos con extension ,csv y tipo.json
+
 ```Json
 
 \\Json
