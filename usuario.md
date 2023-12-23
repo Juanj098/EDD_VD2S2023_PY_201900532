@@ -60,10 +60,16 @@
 ```
 * Inicio de Sesion:
 La aplicacion provee 2 perfiles para el usurio los cuales son administrador y estudiante.
-![log](https://drive.google.com/file/d/1ZuznWP_QcyMHw7DZ-etJBOvoMrDRGuHa/view?usp=drive_link)
+![log](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20024552.png?raw=true)
 ### Administrador:
 tiene permitido todo e manejo administrativo, donde las principales funciones son:
-* Ingrear Documento de Estudiantes
-* Ingresar Documento de Tutores
-* 
+
+![admin](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20025253.png?raw=true)
+* Ingresar Documento de Tutores: Ingresar Documento csv con informacion de tutores.
+* Ingrear Documento de Estudiantes: Ingresar documentos csv con informacion de estudiantes que desean tutorias
+* Cargar cursos al sistmea: cargar archivo Json con lisado de cursos que estan disponibles para tutorias
+* Control de tutores: Se aceptan o rechazan las solicitudes para poder impartir tutorias
+* Reportes: Se da 5 opciones de reportes las cuales cada una contiene la informacion antes proporcionada por el administrador o el usuario
+
+    ![report](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20025342.png?raw=true)
 ### Usuario
