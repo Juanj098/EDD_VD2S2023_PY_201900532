@@ -2,7 +2,7 @@
 
 
 
-## Descricion del proyecto: La aplicacion consiste en un sofware el cual permita administrar datos que eson proporcioados por el usuario como tambien da la oportunidad al usuario de asignarse con un tutor en especifico.
+## Descricion del proyecto: La aplicacion consiste en un sofware el cual permita administrar datos que son proporcionados por el usuario como tambien da la oportunidad al estudiante de asignarse con un tutor en especifico.
 
 ## Funciones Principales de la aplicacion:
 
