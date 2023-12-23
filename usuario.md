@@ -67,9 +67,22 @@ tiene permitido todo e manejo administrativo, donde las principales funciones so
 ![admin](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20025253.png?raw=true)
 * Ingresar Documento de Tutores: Ingresar Documento csv con informacion de tutores.
 * Ingrear Documento de Estudiantes: Ingresar documentos csv con informacion de estudiantes que desean tutorias
-* Cargar cursos al sistmea: cargar archivo Json con lisado de cursos que estan disponibles para tutorias
+* Cargar cursos al sistema: cargar archivo Json con lisado de cursos que estan disponibles para tutorias
 * Control de tutores: Se aceptan o rechazan las solicitudes para poder impartir tutorias
+  
+  ![acceptTutor](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20030555.png?raw=true)
+
 * Reportes: Se da 5 opciones de reportes las cuales cada una contiene la informacion antes proporcionada por el administrador o el usuario
 
     ![report](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20025342.png?raw=true)
 ### Usuario
+ Permite al estudiante poder ver informacion de ciertos cursos y poder asignarse a tutorias sobre ellos
+
+ ![student](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20030814.png?raw=true)
+
+ * Infor cursos: Muestra al estudiante informacion de los cursos disponibles y muestra al tutor que lo imparte
+  
+    ![infoTuto](https://github.com/Juanj098/EDD_VD2S2023_PY_201900532/blob/main/img/Captura%20de%20pantalla%202023-12-23%20030845.png?raw=true)
+
+* Asignar cursos: el estudiante ingresa el codigo del curso que desea asignarse y listo si esta disponible aparecera un mensaje de exito.
+  
