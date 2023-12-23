@@ -95,6 +95,7 @@ func (c *Cola) Primero() {
 		fmt.Println("|Nombre:", c.First.Tutor.Name)
 		fmt.Println("|Promedio:", c.First.Tutor.Prom)
 		fmt.Println("|Curso:", c.First.Tutor.Curso)
+		fmt.Println("Prioridad", c.First.Prioridad)
 		fmt.Println("<--------------------------------->")
 		if c.First.Sig != nil {
 			fmt.Println("|siguiente", c.First.Sig.Tutor.Carnet)
