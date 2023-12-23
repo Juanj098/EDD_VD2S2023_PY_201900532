@@ -47,7 +47,7 @@ se hizo uso de distintas estructuras las cuales sirvieron para almacenar los dat
 ![listaD2](https://ccia.ugr.es/~jfv/ed1/tedi/cdrom/icons/lenlaz1.gif)
 
 ``` Go
-\\Creacion de un nodo y una lisat doble en Go
+\\Creacion de un nodo y una lista doble en Go
 
 type NodoLD struct {
 	Dato    String
