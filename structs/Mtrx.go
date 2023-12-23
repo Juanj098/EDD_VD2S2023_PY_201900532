@@ -82,6 +82,9 @@ func (m *Matriz) AddFil(newNodo *NodoMtx, nodoRaiz *NodoMtx) *NodoMtx {
 		} else if temp.PosY > newNodo.PosY {
 			piv = true
 			break
+		}
+		if temp.Down != nil {
+			temp = temp.Down
 		} else {
 			break
 		}
@@ -158,7 +161,7 @@ digraph G {
 	{rank = min
 `
 		for aux1 != nil {
-			dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + strconv.Itoa(aux1.Dato.Ctutor) + "\" rankdir=LR" + " group=\"" + strconv.Itoa(aux1.PosX+1) + "\"]\n"
+			dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + strconv.Itoa(aux1.Dato.Ctutor) + "\" rankdir=LR" + " group=" + strconv.Itoa(aux1.PosX+1) + "]\n"
 			aux1 = aux1.Next
 		}
 		dotContent += "\t}\n"
@@ -169,10 +172,10 @@ digraph G {
 			flag_raiz := true
 			for aux1 != nil {
 				if flag_raiz {
-					dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + strconv.Itoa(aux1.Dato.Cestudiante) + "\" group=\"" + strconv.Itoa(aux1.PosX+1) + "\"]\n"
+					dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + strconv.Itoa(aux1.Dato.Cestudiante) + "\" group=" + strconv.Itoa(aux1.PosX+1) + "]\n"
 					flag_raiz = false
 				} else {
-					dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + aux1.Dato.Curso + "\" group=\"" + strconv.Itoa(aux1.PosX+1) + "\"]\n"
+					dotContent += "\t\tnodo" + strconv.Itoa(aux1.PosX+1) + strconv.Itoa(aux1.PosY+1) + "[label=\"" + aux1.Dato.Curso + "\" group=" + strconv.Itoa(aux1.PosX+1) + "]\n"
 				}
 				aux1 = aux1.Next
 			}

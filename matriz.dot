@@ -3,18 +3,22 @@ digraph G {
 	node[shape=cluster]
 	rankdir=UD
 	{rank = min
-		nodo00[label="0" rankdir=LR group="0"]
-		nodo20[label="202103105" rankdir=LR group="2"]
-		nodo30[label="202103206" rankdir=LR group="3"]
-		nodo40[label="202103252" rankdir=LR group="4"]
-		nodo50[label="202106003" rankdir=LR group="5"]
-		nodo60[label="202109750" rankdir=LR group="6"]
-		nodo70[label="202110180" rankdir=LR group="7"]
-		nodo80[label="202110509" rankdir=LR group="8"]
+		nodo00[label="0" rankdir=LR group=0]
+		nodo20[label="202103105" rankdir=LR group=2]
+		nodo30[label="202103206" rankdir=LR group=3]
+		nodo40[label="202103252" rankdir=LR group=4]
+		nodo50[label="202106003" rankdir=LR group=5]
+		nodo60[label="202109750" rankdir=LR group=6]
+		nodo70[label="202110509" rankdir=LR group=7]
+		nodo80[label="202110509" rankdir=LR group=8]
 	}
 	{rank=same
-		nodo02[label="202103206" group="0"]
-		nodo82[label="781" group="8"]
+		nodo02[label="202103105" group=0]
+		nodo72[label="772" group=7]
+	}
+	{rank=same
+		nodo03[label="202103206" group=0]
+		nodo83[label="781" group=8]
 	}
 	nodo00 -> nodo20[arrowhead=none]
 	nodo20 -> nodo30[arrowhead=none]
@@ -23,7 +27,10 @@ digraph G {
 	nodo50 -> nodo60[arrowhead=none]
 	nodo60 -> nodo70[arrowhead=none]
 	nodo70 -> nodo80[arrowhead=none]
-	nodo02 -> nodo82[arrowhead=none]
+	nodo02 -> nodo72[arrowhead=none]
+	nodo03 -> nodo83[arrowhead=none]
 	nodo00 -> nodo02[arrowhead=none]
-	nodo80 -> nodo82[arrowhead=none]
+	nodo02 -> nodo03[arrowhead=none]
+	nodo70 -> nodo72[arrowhead=none]
+	nodo80 -> nodo83[arrowhead=none]
 }

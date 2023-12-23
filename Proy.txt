@@ -1,6 +1,11 @@
 alumnos -> lista doble
 Tutores -> lista doble circular
 
+202110509
+772
+781
+
+
 		("<------------[ADMIN]------------>")
 		("|1. Cargar estudiantes Tutores  |") x
 		("|2. Cargar estudiantes          |") x

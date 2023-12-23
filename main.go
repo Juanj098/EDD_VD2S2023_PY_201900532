@@ -267,9 +267,20 @@ func CTtutores() {
 				switch opc {
 				case "a":
 					tutor := ColaPri.Ret_Desc()
-					listaDC.AddTutor(tutor.Name, tutor.Carnet, tutor.Curso, tutor.Prom)
-					matriz.AddElm(tutor.Carnet, 0, tutor.Curso)
-					fmt.Println("tutor registrado..")
+					resp := listaDC.SearchTutor(tutor.Curso)
+					if resp != nil {
+						if tutor.Prom >= resp.Prom {
+							listaDC.AddTutor(tutor.Name, tutor.Carnet, tutor.Curso, tutor.Prom)
+							matriz.AddElm(tutor.Carnet, 0, tutor.Curso)
+							fmt.Println("tutor registrado..")
+						} else {
+							fmt.Println("curso ya cuenta con tutor...")
+						}
+					} else {
+						listaDC.AddTutor(tutor.Name, tutor.Carnet, tutor.Curso, tutor.Prom)
+						matriz.AddElm(tutor.Carnet, 0, tutor.Curso)
+						fmt.Println("tutor registrado..")
+					}
 				case "x":
 					ColaPri.Descolar()
 				case "s":
