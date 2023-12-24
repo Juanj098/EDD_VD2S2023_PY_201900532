@@ -1,0 +1,75 @@
+
+digraph G {
+	node[shape=cluster]
+	rankdir=UD
+	{rank = min
+		nodo00[label="0" rankdir=LR group=0]
+		nodo20[label="202000869" rankdir=LR group=2]
+		nodo30[label="202006716" rankdir=LR group=3]
+		nodo40[label="202010003" rankdir=LR group=4]
+		nodo50[label="202010810" rankdir=LR group=5]
+		nodo60[label="202010828" rankdir=LR group=6]
+		nodo70[label="202100087" rankdir=LR group=7]
+		nodo80[label="202100119" rankdir=LR group=8]
+		nodo90[label="202001471" rankdir=LR group=9]
+		nodo100[label="202001950" rankdir=LR group=10]
+		nodo110[label="202010046" rankdir=LR group=11]
+		nodo120[label="202010915" rankdir=LR group=12]
+		nodo130[label="202100122" rankdir=LR group=13]
+		nodo140[label="202004783" rankdir=LR group=14]
+		nodo150[label="201709196" rankdir=LR group=15]
+		nodo160[label="201709196" rankdir=LR group=16]
+		nodo170[label="201403885" rankdir=LR group=17]
+		nodo180[label="201403885" rankdir=LR group=18]
+		nodo190[label="201403885" rankdir=LR group=19]
+	}
+	{rank=same
+		nodo02[label="202000869" group=0]
+		nodo152[label="0772" group=15]
+		nodo172[label="0772" group=17]
+	}
+	{rank=same
+		nodo03[label="202010828" group=0]
+		nodo163[label="0775" group=16]
+	}
+	{rank=same
+		nodo04[label="202010810" group=0]
+		nodo184[label="0972" group=18]
+	}
+	{rank=same
+		nodo05[label="202100087" group=0]
+		nodo195[label="0729" group=19]
+	}
+	nodo00 -> nodo20[arrowhead=none]
+	nodo20 -> nodo30[arrowhead=none]
+	nodo30 -> nodo40[arrowhead=none]
+	nodo40 -> nodo50[arrowhead=none]
+	nodo50 -> nodo60[arrowhead=none]
+	nodo60 -> nodo70[arrowhead=none]
+	nodo70 -> nodo80[arrowhead=none]
+	nodo80 -> nodo90[arrowhead=none]
+	nodo90 -> nodo100[arrowhead=none]
+	nodo100 -> nodo110[arrowhead=none]
+	nodo110 -> nodo120[arrowhead=none]
+	nodo120 -> nodo130[arrowhead=none]
+	nodo130 -> nodo140[arrowhead=none]
+	nodo140 -> nodo150[arrowhead=none]
+	nodo150 -> nodo160[arrowhead=none]
+	nodo160 -> nodo170[arrowhead=none]
+	nodo170 -> nodo180[arrowhead=none]
+	nodo180 -> nodo190[arrowhead=none]
+	nodo02 -> nodo152[arrowhead=none]
+	nodo152 -> nodo172[arrowhead=none]
+	nodo03 -> nodo163[arrowhead=none]
+	nodo04 -> nodo184[arrowhead=none]
+	nodo05 -> nodo195[arrowhead=none]
+	nodo00 -> nodo02[arrowhead=none]
+	nodo02 -> nodo03[arrowhead=none]
+	nodo03 -> nodo04[arrowhead=none]
+	nodo04 -> nodo05[arrowhead=none]
+	nodo150 -> nodo152[arrowhead=none]
+	nodo160 -> nodo163[arrowhead=none]
+	nodo170 -> nodo172[arrowhead=none]
+	nodo180 -> nodo184[arrowhead=none]
+	nodo190 -> nodo195[arrowhead=none]
+}
