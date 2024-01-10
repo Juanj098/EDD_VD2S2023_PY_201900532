@@ -1,14 +1,14 @@
-carnet,nombre,password
-201020692,Adolfo Enrique Noriega Godinez,201020692
-200715321,Dale Jim Melendez Herrera,200715321
-201325511,Jose Estuardo Melendez De La Cruz,201325511
-201403885,Kevin Ricardo Pinto Montenegro,201403885
-201602947,Erick Estuardo Muñoz Escalante,201602947
-201700866,Erick Noe Gómez López,201700866
-201700889,Wagner Estuardo Fuentes Quintana,201700889
-201700936,Gabriel Orlando Chinchilla Vasquez,201700936
-201709196,Allan Josué Rafael Morales,201709196
-201800673,Sergio Emilio De León Bucaro,201800673
-201801105,Daniel Eduardo Izas Marroquín,201801105
-201801356,Johatan Ernesto Fuentes Osoy,201801356
-201801683,Juan Carlos Augusto Picholá Monroy,201801683
+carnet,nombre,password,curso1,curso2,curso3
+201020692,Adolfo Enrique Noriega Godinez,201020692,772,781	,728
+200715321,Dale Jim Melendez Herrera,200715321,772,781,728
+201325511,Jose Estuardo Melendez De La Cruz,201325511,772,781,728
+201403885,Kevin Ricardo Pinto Montenegro,201403885,772,781,728
+201602947,Erick Estuardo Muñoz Escalante,201602947,772,781,728
+201700866,Erick Noe Gómez López,201700866,772,781,728
+201700889,Wagner Estuardo Fuentes Quintana,201700889,772,781,728
+201700936,Gabriel Orlando Chinchilla Vasquez,201700936,772,781,728
+201709196,Allan Josué Rafael Morales,201709196,772,781,728
+201800673,Sergio Emilio De León Bucaro,201800673,772,781,728
+201801105,Daniel Eduardo Izas Marroquín,201801105,772,781,728
+201801356,Johatan Ernesto Fuentes Osoy,201801356,772,781,728
+201801683,Juan Carlos Augusto Picholá Monroy,201801683,772,781,728

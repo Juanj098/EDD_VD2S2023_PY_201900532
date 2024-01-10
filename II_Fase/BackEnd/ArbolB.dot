@@ -1,0 +1,20 @@
+digraph arbol { 
+		node[shape=record]R285[label="R285[label="<C1>|R285[label="R285[label="<C1>|285R285[label="R285[label="<C1>|R285[label="R285[label="<C1>|285|<C2>R285[label="R285[label="<C1>|R285[label="R285[label="<C1>|285R285[label="R285[label="<C1>|R285[label="R285[label="<C1>|285|<C2>"];
+R771[label="R771[label="<C1>|R771[label="R771[label="<C1>|771R771[label="R771[label="<C1>|R771[label="R771[label="<C1>|771|<C2>R771[label="R771[label="<C1>|R771[label="R771[label="<C1>|771R771[label="R771[label="<C1>|R771[label="R771[label="<C1>|771|<C2>"];
+R781[label="R781[label="<C1>|R781[label="R781[label="<C1>|781R781[label="R781[label="<C1>|R781[label="R781[label="<C1>|781|<C2>R781[label="R781[label="<C1>|R781[label="R781[label="<C1>|781R781[label="R781[label="<C1>|R781[label="R781[label="<C1>|781|<C2>"];
+R772[label="R772[label="772R772[label="R772[label="772"];
+R728[label="R728[label="728R728[label="R728[label="728"];
+R789[label="R789[label="<C1>|R789[label="R789[label="<C1>|789R789[label="R789[label="<C1>|R789[label="R789[label="<C1>|789|<C2>R789[label="R789[label="<C1>|R789[label="R789[label="<C1>|789R789[label="R789[label="<C1>|R789[label="R789[label="<C1>|789|<C2>"];
+R770[label="R770[label="770R770[label="R770[label="770"];
+R281[label="R281[label="281R281[label="R281[label="281"];
+R785[label="R785[label="<C1>|R785[label="R785[label="<C1>|785R785[label="R785[label="<C1>|R785[label="R785[label="<C1>|785|<C2>R785[label="R785[label="<C1>|R785[label="R785[label="<C1>|785R785[label="R785[label="<C1>|R785[label="R785[label="<C1>|785|<C2>"];
+R972[label="R972[label="<C1>|R972[label="R972[label="<C1>|972R972[label="R972[label="<C1>|R972[label="R972[label="<C1>|972|<C2>R972[label="R972[label="<C1>|R972[label="R972[label="<C1>|972R972[label="R972[label="<C1>|R972[label="R972[label="<C1>|972|<C2>"];
+R775[label="R775[label="775R775[label="R775[label="775"];
+R286[label="R286[label="286R286[label="R286[label="286"];
+R724[label="R724[label="<C1>|R724[label="R724[label="<C1>|724R724[label="R724[label="<C1>|R724[label="R724[label="<C1>|724|<C2>R724[label="R724[label="<C1>|R724[label="R724[label="<C1>|724R724[label="R724[label="<C1>|R724[label="R724[label="<C1>|724|<C2>"];
+R729[label="R729[label="729R729[label="R729[label="729"];
+R970[label="R970[label="970R970[label="R970[label="970"];
+R285:C1 -> R771;
+R771:C1 -> R781;
+R781:C1 -> R772;
+}

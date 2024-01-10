@@ -4,7 +4,7 @@ type Estudiante struct {
 	Carnet   int
 	Name     string
 	Password string
-	// Cursos   []string
+	Cursos   []int
 }
 
 type NodoHash struct {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { NavBar } from "../components/navbar"
 
 export function Login(){
     const [data, setData] = useState({
@@ -31,10 +32,17 @@ export function Login(){
                 const r = await resp.json()
                 console.log(r.response)
                 if (r.response == 'Admin'){
+                    localStorage.setItem('user',r.User)
                     window.open("/Admin","_self")
                 }else if (r.response == "Tutor"){
+                    localStorage.setItem('user',r.User)
                     window.open("/Tutor","_self")
                 } else if(r.response == 'Estudiante'){
+                    localStorage.setItem('user',r.User)
+                    localStorage.setItem('c1',r.Data[0])
+                    localStorage.setItem('c2',r.Data[1])
+                    localStorage.setItem('c3',r.Data[2])
+                    // console.log(r.Data[0])
                     window.open('/Estudiante',"_self")
                 }else{
                     alert('verifique credenciales')
@@ -48,6 +56,7 @@ export function Login(){
     }
 
     return(
+        <>
         <form className='bdy-log' onSubmit={handlerSubmit} >
             <div className='log-go'>
                 <label className="lbl-log" htmlFor="userlog">User</label>
@@ -59,4 +68,5 @@ export function Login(){
                 <button  type="submit" className='btn-log'>Entrar</button>
             </label>
         </form>
+        </>
     )}

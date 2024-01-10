@@ -20,6 +20,44 @@
   width: 85%;
 }
 
+.BtnCH,
+.BtnDl,
+.endBtn,
+.ebtn{
+  margin: 10px;
+  background-color: #242424;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+}
+
+.checkbtn{
+  width: 20px;
+  cursor: pointer;
+}
+
+.declinebtn{
+  cursor: pointer;
+  width: 20px;
+}
+
+.nv-admin{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid wheat;
+}
+
+.nv-admin ul,
+.nv-tutor ul{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 15px;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -65,6 +103,11 @@ body {
   height: 30px;
 }
 
+.pdfR{
+  background-color: #1a1a1a;
+  width: 450px;
+  height: 550px;
+}
 
 .btn-log {
   border-radius: 8px;
@@ -78,30 +121,133 @@ body {
   transition: border-color 0.25s;
   width: 80%;
 }
-.btn-log:hover {
+.btn-log:hover,
+.csvtb:hover,
+.csveb:hover,
+.jsonb:hover,
+.pdfb:hover,
+.btnTxt:hover,
+.endBtn:hover,
+.ebtn:hover{
   border-color: #646cff;
 }
 .btn-log:focus,
-.btn-log:focus-visible {
+.btn-log:focus-visible,
+.endBtn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+.csvT, 
+.csvE,
+.cJSON,
+.PdfT{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  height: 40px;
+  /* border: 1px solid white; */
+}
+
+.imgtutor{
+  width: 300px;
+}
+
+.txtPubli{
+  resize: none;
+  margin: 10px;
+}
+
+.csvT label,
+.cJSON label{
+  width: 100px;
+}
+.csvT input,
+.csvE input,
+.cJSON input,
+.PdfT input{
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  height: 50%;
+  width: 300px;
+}
+
+.TBooksP td{
+  border: 1px solid wheat;
+  padding: 6px;
+}
+
+.Testudiante {
+  border: 1px solid wheat;
+}
+
+.Testudiante td{
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+.Testudiante tbody tr:nth-child(odd){
+  background-color: rgb(97, 97, 123);
+} 
+
+.containerCards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1{
+  margin-left: 2px;
+}
+
+.card{
+  border: 1px solid white;
+  margin: 10px;
+  padding: 20px;
+}
+
+.btnTxt{
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  width: 150px;
+}
+iframe{
+  margin: 10px;
+}
+
+.csvtb,
+.csveb,
+.jsonb,
+.pdfb{
+  background-color: #1a1a1a;
+  cursor: pointer;
+  height: 100%;
+  width: 100px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
 }
 .container{
   display: flex;
   flex-direction: column;
-  /* border:1px solid white; */
-  width: 99vw;
-  height: 99vh;
+  width: 98.9vw;
+  height: 91vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-img{
   width: 40px;
 }
 
-.hder-admin{
-  border: 1px solid white;
-  width: 100%;
-  height: 10%;
-  display:flex;
+.nv-tutor{
+  border: 1px solid wheat;
+  flex-direction: row;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }

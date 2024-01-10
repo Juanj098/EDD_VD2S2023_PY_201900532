@@ -11,9 +11,13 @@ type TablaHash struct {
 	Utilizacion int
 }
 
-func (t *TablaHash) Insertar(carnet int, name string, pass string) {
+func (t *TablaHash) Insertar(carnet int, name string, pass string, c1 int, c2 int, c3 int) {
 	index := t.Calc_Index(carnet)
-	newNodo := &NodoHash{Llave: index, Dato: &Estudiante{Carnet: carnet, Name: name, Password: pass}}
+	var cursos []int
+	cursos = append(cursos, c1)
+	cursos = append(cursos, c2)
+	cursos = append(cursos, c3)
+	newNodo := &NodoHash{Llave: index, Dato: &Estudiante{Carnet: carnet, Name: name, Password: pass, Cursos: cursos}}
 	if index < t.Capacidad {
 		if _, existe := t.Tabla[index]; !existe {
 			t.Tabla[index] = *newNodo
@@ -53,7 +57,7 @@ func (t *TablaHash) Reinsertar(auxPrev int) {
 	t.Tabla = make(map[int]NodoHash)
 	for i := 0; i < auxPrev; i++ {
 		if user, existe := auxT[i]; existe {
-			t.Insertar(user.Dato.Carnet, user.Dato.Name, user.Dato.Password)
+			t.Insertar(user.Dato.Carnet, user.Dato.Name, user.Dato.Password, user.Dato.Cursos[0], user.Dato.Cursos[2], user.Dato.Cursos[2])
 		}
 	}
 }
@@ -154,4 +158,44 @@ func (t *TablaHash) Buscar(carnet string, pass string) *NodoHash {
 		}
 	}
 	return nil
+}
+
+func (t *TablaHash) BuscarC(temp int) *NodoHash {
+	index := t.Calc_Index(temp)
+	if index < t.Capacidad {
+		if user, existe := t.Tabla[index]; existe {
+			if user.Dato.Carnet == temp {
+				return &user
+
+			} else {
+				contador := 1
+				index = t.reIndex(temp, contador)
+				for {
+					if user, existe := t.Tabla[index]; existe {
+						if user.Dato.Carnet == temp {
+							return &user
+						} else {
+							contador++
+							index = t.reIndex(temp, contador)
+						}
+					} else {
+						return nil
+					}
+				}
+			}
+		}
+	}
+	return nil
+}
+
+func (t *TablaHash) Arreglo() []NodoHash {
+	var array []NodoHash
+	if t.Utilizacion > 0 {
+		for i := 0; i < t.Capacidad; i++ {
+			if user, existe := t.Tabla[i]; existe {
+				array = append(array, user)
+			}
+		}
+	}
+	return array
 }

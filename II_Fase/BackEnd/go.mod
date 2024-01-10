@@ -2,7 +2,10 @@ module BackEnd
 
 go 1.21.4
 
-require github.com/gofiber/fiber/v2 v2.51.0
+require (
+	github.com/gofiber/fiber/v2 v2.51.0
+	golang.org/x/crypto v0.17.0
+)
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
